@@ -18,8 +18,8 @@ class CreateNovaRedirectTester extends Migration
             $table->id();
             $table->string("name", 50);
             $table->text("description")->nullable(true);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
 
         // Add default group to the groups
@@ -32,8 +32,8 @@ class CreateNovaRedirectTester extends Migration
             $table->string("url_from", 255);
             $table->string("url_to", 255)->nullable(true);
             $table->smallInteger("expected_status_code", false, true)->default(301);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
