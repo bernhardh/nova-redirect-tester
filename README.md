@@ -85,6 +85,9 @@ If you wanna try it out, just add the following routes to your `routes/web.php`:
 Route::get('cms/categories/articles/{article}.htm', function($article){
     return redirect('articles/' . $article);
 });
+Route::get('static-site/{article}.html', function($article){
+    return redirect('articles/' . $article);
+});
 Route::get('articles/{article}', function($article){
     return '<h1>' . $article . '</h1>';
 });
@@ -96,3 +99,6 @@ and then add the following `Redirect Tests` in nova:
 |---|---|---|---|
 | Articles  | 301  | /cms/categories/articles/my-first-article.htm  | /articles/my-first-article  |
 | Articles  | 301  | /cms/categories/articles/the-2-article.htm  | /articles/the-2-article  |
+| Articles  | 301  | /static-site/prices  | /articles/prices  |
+| Default  | 404  | /this-url-does-not-exist  | |
+| Default  | 301  | /my-old-url  | /this-test-will-fail |
