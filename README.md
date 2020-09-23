@@ -2,6 +2,8 @@
 
 This is a laravel nova tool, where you can test visually if all your redirects are working as expected. 
 
+![image](https://user-images.githubusercontent.com/642292/93991705-de986700-fd8c-11ea-9631-c4d135595412.png)
+
 ## Table of content
 1. [Why should I use this package?](#why-should-i-use-this-package)
 2. [Installation](#installation)
@@ -102,3 +104,7 @@ and then add the following `Redirect Tests` in nova:
 | Articles  | 301  | /static-site/prices  | /articles/prices  |
 | Default  | 404  | /this-url-does-not-exist  | |
 | Default  | 301  | /my-old-url  | /this-test-will-fail |
+
+This will result in the following:
+
+![image](https://user-images.githubusercontent.com/642292/93991705-de986700-fd8c-11ea-9631-c4d135595412.png)
