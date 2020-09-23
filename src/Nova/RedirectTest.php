@@ -9,7 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
-class RedirectTest extends Resource
+class RedirectTest extends \App\Nova\Resource
 {
     /**
      * The model the resource corresponds to.
@@ -45,18 +45,18 @@ class RedirectTest extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make('Group', 'redirectTesterGroup', RedirectTestGroup::class)
-                ->required(true)
+                ->rules('required')
                 ->showCreateRelationButton(true),
             Select::make("Status Code", "expected_status_code")
                 ->options([
                     301 => "301 Moved Permanently",
                     404 => "404 Not found",
                 ])
-                ->required(true)
+                ->rules('required')
                 ->default(301)
                 ->sortable(),
             Text::make("Url From", "url_from")
-                ->required(true)
+                ->rules('required')
                 ->sortable(),
             Text::make("Url To", "url_to")
                 ->sortable(),

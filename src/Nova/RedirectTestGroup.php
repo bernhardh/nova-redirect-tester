@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 
-class RedirectTestGroup extends Resource
+class RedirectTestGroup extends \App\Nova\Resource
 {
     /**
      * The model the resource corresponds to.
@@ -51,7 +51,7 @@ class RedirectTestGroup extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("Name", "name")
-                ->required(true)
+                ->rules('required')
                 ->sortable(),
             Textarea::make("Description", "description")
                 ->showOnIndex()

@@ -1,7 +1,7 @@
 <template>
     <div>
         <card>
-            <h3 class="p-5">
+            <h3 class="p-3">
                 {{ name }}
 
                 <redirect-status :status="testRunning ? 'loading' : (testError > 0 ? 'error' : 'success')"></redirect-status>

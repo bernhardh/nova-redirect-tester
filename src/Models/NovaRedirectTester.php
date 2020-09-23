@@ -12,7 +12,8 @@ class NovaRedirectTester extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function testGroup() {
-        return $this->belongsTo(NovaRedirectTester::class, 'nova_redirect_tester_group_id', 'id');
+    public function redirectTesterGroup()
+    {
+        return $this->belongsTo(NovaRedirectTesterGroup::class, 'nova_redirect_tester_group_id', 'id');
     }
 }
