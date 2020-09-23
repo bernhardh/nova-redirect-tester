@@ -7,6 +7,7 @@ This is a laravel nova tool, where you can test visually if all your redirects a
 2. [Installation](#installation)
 3. [Create tests](#create-tests)
 4. [Editing Groups](#editing-groups)
+5. [Examples](#examples)
 
 ## Why should I use this package?
 
@@ -74,3 +75,24 @@ Now you can add a new test like any other nova resource.
 ## Editing Groups
 
 The Group resource is hidden by default in your sidebar. You can change that, by adding `public static $displayInNavigation = true;` to your `App\Nova\RedirectTestGroup` class.
+
+## Examples
+
+If you wanna try it out, just add the following routes to your `routes/web.php`:
+
+```php
+// routes/web.php
+Route::get('cms/categories/articles/{article}.htm', function($article){
+    return redirect('articles/' . $article);
+});
+Route::get('articles/{article}', function($article){
+    return '<h1>' . $article . '</h1>';
+});
+```
+
+and then add the following `Redirect Tests` in nova:
+
+| Group  | Status Code  | Url From  | Url To  |
+|---|---|---|---|
+| Articles  | 301  | /cms/categories/articles/my-first-article.htm  | /articles/my-first-article  |
+| Articles  | 301  | /cms/categories/articles/the-2-article.htm  | /articles/the-2-article  |

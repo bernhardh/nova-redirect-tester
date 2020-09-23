@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/redirects', function (Request $request) {
     $rows = \Bernhardh\NovaRedirectTester\Models\NovaRedirectTesterGroup::query()
-        ->with("items")
+        ->has("items")
         ->get();
 
     $validUrl = function($url) {
