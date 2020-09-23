@@ -2,7 +2,7 @@
 
 This is a laravel nova tool, where you can test visually if all your redirects are working as expected. 
 
-![image](https://user-images.githubusercontent.com/642292/93991705-de986700-fd8c-11ea-9631-c4d135595412.png)
+![Animate](https://user-images.githubusercontent.com/642292/93993236-c9bcd300-fd8e-11ea-8400-9db1f3251d59.gif)
 
 ## Table of content
 1. [Why should I use this package?](#why-should-i-use-this-package)
